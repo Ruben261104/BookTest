@@ -1,0 +1,35 @@
+# # Dockerfile
+# FROM php:8.2-cli
+#
+# # Install system dependencies
+# RUN apt-get update && apt-get install -y \
+#     git \
+#     unzip \
+#     libpq-dev \
+#     libzip-dev \
+#     zip \
+#     libonig-dev \
+#     libxml2-dev \
+#     curl \
+#     libpng-dev \
+#     libjpeg-dev \
+#     libfreetype6-dev \
+#     libicu-dev \
+#     g++ \
+#     nano \
+#     libmcrypt-dev \
+#     libmagickwand-dev --no-install-recommends
+#
+# # Install PHP extensions
+# RUN docker-php-ext-install pdo pdo_mysql intl zip opcache
+#
+# # Install Composer
+# COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+#
+# WORKDIR /app
+#
+# # Expose port
+# EXPOSE 8000
+#
+# # Entrypoint
+# CMD ["php", "-S", "0.0.0.0:8000", "-t", "public"]
